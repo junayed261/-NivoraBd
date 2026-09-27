@@ -4,90 +4,126 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Nivora — Smart Choice, Better Life</title>
-<meta name="description" content="Nivora — Trendy Fashion, Lifestyle & Everyday Essentials.">
+<meta name="description" content="Nivora — Trendy Fashion, Baby & Everyday Essentials">
 <style>
-:root{--green:#075b3d;--lime:#7ccf35;--cream:#f7f5ed;--dark:#14201b;--white:#fff}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans Bengali",sans-serif;color:var(--dark);background:#fff}
-header{background:var(--green);color:#fff;position:sticky;top:0;z-index:5}
-.nav{max-width:1100px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:28px;font-weight:800;letter-spacing:.5px}.logo span{color:var(--lime)}
-nav a{color:#fff;text-decoration:none;margin-left:18px;font-size:14px}
-.hero{background:linear-gradient(120deg,#eef7e9,#fff);padding:65px 20px}
-.hero-inner{max-width:1100px;margin:auto;display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}
-.hero h1{font-size:48px;margin:0 0 10px;color:var(--green)}.hero p{font-size:20px;line-height:1.6}
-.btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;padding:13px 22px;border-radius:28px;font-weight:700;margin-top:10px}
-.hero-card{background:#fff;border-radius:24px;padding:30px;box-shadow:0 10px 30px #0001;text-align:center}
-.hero-card .n{font-size:92px;font-weight:900;color:var(--green)}.hero-card .n span{color:var(--lime)}
-section{max-width:1100px;margin:auto;padding:55px 20px}.title{text-align:center;color:var(--green);font-size:30px;margin:0 0 30px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{border:1px solid #e4e8e3;border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 5px 18px #0000000a}
-.pic{height:210px;background:linear-gradient(135deg,#edf5ea,#dbe9dc);display:flex;align-items:center;justify-content:center;font-size:72px}
-.card-body{padding:18px}.card h3{margin:0 0 8px}.price{font-size:22px;color:var(--green);font-weight:800}
-.card .btn{width:100%;text-align:center}
-.features{background:var(--cream)}.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center}
-.feature{background:#fff;padding:22px;border-radius:16px}.feature b{display:block;margin-top:8px;color:var(--green)}
-.contact{text-align:center}.contact p{line-height:1.8}
-footer{background:var(--dark);color:#fff;text-align:center;padding:28px 20px}
-.small{font-size:13px;color:#6c756f}
-@media(max-width:760px){.hero-inner{grid-template-columns:1fr}.hero h1{font-size:36px}.grid{grid-template-columns:1fr 1fr}.feature-grid{grid-template-columns:1fr 1fr}nav{display:none}}
-@media(max-width:480px){.grid{grid-template-columns:1fr}.hero{padding:45px 18px}.hero-card .n{font-size:70px}}
+*{box-sizing:border-box}
+:root{--green:#075b3d;--lime:#8bd44a;--dark:#17211d;--light:#f7f7f4}
+body{margin:0;font-family:Arial,"Noto Sans Bengali",sans-serif;color:var(--dark);background:#fff}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid #eee}
+.nav{height:70px;max-width:1180px;margin:auto;padding:0 18px;display:flex;align-items:center;justify-content:space-between}
+.menu{font-size:29px;color:#555}.logo{font-size:29px;font-weight:900;color:var(--green)}
+.logo span{color:var(--lime)}.cart{font-size:23px;border:1.5px solid #222;width:43px;height:43px;border-radius:4px;display:flex;align-items:center;justify-content:center}
+.hero{background:linear-gradient(120deg,#eef7e9,#fff);padding:40px 18px}
+.hero-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}
+.kicker{font-size:12px;letter-spacing:2px;color:#6d746f;font-weight:700}
+.hero h1{font-size:52px;line-height:1.05;margin:12px 0;color:var(--green)}
+.hero p{font-size:18px;line-height:1.7;color:#4c554f}
+.btn{display:inline-block;background:var(--green);color:#fff;padding:13px 24px;border-radius:3px;font-weight:700;margin-top:8px}
+.hero-img{width:100%;height:390px;object-fit:cover;border-radius:3px}
+.categories{max-width:1180px;margin:auto;padding:30px 18px 18px}
+.cat-row{display:flex;gap:25px;align-items:center;overflow:auto;padding:4px 0 10px}
+.cat{text-align:center;min-width:115px}.cat img,.cat-placeholder{width:105px;height:105px;border-radius:50%;object-fit:cover;border:1px solid #eee}
+.cat-placeholder{display:flex;align-items:center;justify-content:center;background:#eee;font-size:28px}.cat b{display:block;margin-top:9px}
+.section{max-width:1180px;margin:auto;padding:25px 18px 55px}
+.section-title{text-align:center;margin:0 0 28px;font-size:28px}.section-title span{display:inline-block;border:1px solid #ddd;padding:10px 22px;background:#fff}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.card{position:relative;background:#fff;border:1px solid #e7e7e7;overflow:hidden}
+.sale{position:absolute;left:0;top:55px;background:#666;color:#fff;padding:9px 14px;border-radius:0 24px 24px 0;font-weight:700;z-index:2}
+.product-img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;background:#f3f3f3}
+.card-body{padding:14px}.card h3{margin:0 0 6px;font-size:20px}.old{text-decoration:line-through;color:#888}.price{font-size:22px;font-weight:800;margin-top:2px}
+.card .btn{width:100%;text-align:center;margin-top:12px}
+.features{background:var(--light);padding:38px 18px}.feature-grid{max-width:1180px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.feature{text-align:center;background:#fff;padding:20px;border-radius:4px}.feature b{display:block;color:var(--green);margin:7px 0}
+.contact{text-align:center;padding:45px 18px}footer{background:var(--dark);color:#fff;text-align:center;padding:25px}
+.float{position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;background:#65c87b;color:#fff;display:flex;align-items:center;justify-content:center;font-size:27px;z-index:30;box-shadow:0 4px 16px #0002}
+@media(max-width:760px){
+ .nav{height:64px}.logo{font-size:25px}.hero{padding:28px 16px}.hero-inner{grid-template-columns:1fr}.hero h1{font-size:38px}.hero-img{height:300px}
+ .categories{padding-top:23px}.cat{min-width:100px}.cat img,.cat-placeholder{width:88px;height:88px}
+ .section{padding:22px 14px 45px}.grid{gap:12px}.card h3{font-size:17px}.price{font-size:20px}.sale{top:43px;padding:8px 11px}
+ .feature-grid{grid-template-columns:1fr 1fr}
+}
 </style>
 </head>
 <body>
-<header>
-  <div class="nav">
-    <div class="logo">Ni<span>v</span>ora</div>
-    <nav><a href="#home">Home</a><a href="#products">Products</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
-  </div>
-</header>
+<header><div class="nav"><div class="menu">☰</div><div class="logo">Ni<span>v</span>ora</div><div class="cart">🛍</div></div></header>
 
-<main id="home">
+<main>
 <section class="hero">
-  <div class="hero-inner">
-    <div>
-      <div class="small">FASHION • LIFESTYLE • EVERYDAY ESSENTIALS</div>
-      <h1>Smart Choice,<br>Better Life.</h1>
-      <p>আপনার স্টাইল ও দৈনন্দিন প্রয়োজনের জন্য মানসম্মত পণ্য, সাশ্রয়ী দামে। সারাদেশে Home Delivery.</p>
-      <a class="btn" href="#products">Shop Now →</a>
-    </div>
-    <div class="hero-card"><div class="n">N<span>•</span></div><h2>Nivora</h2><p>Trendy Fashion & Everyday Essentials</p></div>
+ <div class="hero-inner">
+  <div><div class="kicker">NIVORA • FASHION • BABY • LIFESTYLE</div>
+   <h1>Smart Choice,<br>Better Life.</h1>
+   <p>Trendy fashion ও baby essentials — ভালো মানের পণ্য, সাশ্রয়ী দামে।</p>
+   <a class="btn" href="#products">Shop Now →</a>
   </div>
+  <img class="hero-img" src="women-3piece-blue.jpg" alt="Nivora Fashion">
+ </div>
 </section>
 
-<section id="products">
-  <h2 class="title">Featured Products</h2>
-  <div class="grid">
-    <article class="card"><div class="pic">👕</div><div class="card-body"><h3>Premium T-Shirt</h3><div class="price">৳ 499</div><p>আরামদায়ক ও স্টাইলিশ।</p><a class="btn" href="https://wa.me/8801836927247?text=I%20want%20to%20order%20Premium%20T-Shirt">Order Now</a></div></article>
-    <article class="card"><div class="pic">👔</div><div class="card-body"><h3>Casual Shirt</h3><div class="price">৳ 699</div><p>দৈনন্দিন ও casual look-এর জন্য।</p><a class="btn" href="https://wa.me/8801836927247?text=I%20want%20to%20order%20Casual%20Shirt">Order Now</a></div></article>
-    <article class="card"><div class="pic">🧢</div><div class="card-body"><h3>Stylish Cap</h3><div class="price">৳ 299</div><p>সহজে style complete করুন।</p><a class="btn" href="https://wa.me/8801836927247?text=I%20want%20to%20order%20Stylish%20Cap">Order Now</a></div></article>
-  </div>
-  <p class="small" style="text-align:center;margin-top:20px">*দাম ও product information আপনার আসল পণ্য অনুযায়ী পরিবর্তন করবেন।</p>
+<section class="categories">
+ <div class="cat-row">
+  <div class="cat"><img src="linen-shirt.jpg" alt="Men"><b>MEN</b></div>
+  <div class="cat"><img src="women-3piece-blue.jpg" alt="Women"><b>WOMEN</b></div>
+  <div class="cat"><img src="baby-dress.jpg" alt="Baby"><b>BABY</b></div>
+ </div>
 </section>
 
-<section class="features">
-  <h2 class="title">Why Choose Nivora?</h2>
-  <div class="feature-grid">
-    <div class="feature">✓<b>মানসম্মত পণ্য</b><span>ভালো quality-এর প্রতি গুরুত্ব</span></div>
-    <div class="feature">৳<b>সাশ্রয়ী দাম</b><span>Customer-friendly pricing</span></div>
-    <div class="feature">🚚<b>Home Delivery</b><span>সারাদেশে delivery</span></div>
-    <div class="feature">💬<b>Friendly Support</b><span>সহজে যোগাযোগ করুন</span></div>
-  </div>
+<section class="section" id="products">
+ <h2 class="section-title"><span>★ OUR PREMIUM COLLECTIONS</span></h2>
+ <div class="grid">
+
+  <article class="card"><div class="sale">Sale!</div>
+   <img class="product-img" src="women-3piece-blue.jpg" alt="Premium Women's 3 Piece">
+   <div class="card-body"><h3>Premium Women's 3 Piece</h3><div class="old">৳1,200</div><div class="price">৳899</div>
+   <a class="btn" href="https://wa.me/8801836927247?text=I%20want%20to%20order%20Premium%20Women's%203%20Piece">ORDER NOW</a></div>
+  </article>
+
+  <article class="card"><div class="sale">Sale!</div>
+   <img class="product-img" src="women-3piece-peach.jpg" alt="Printed Women's 3 Piece">
+   <div class="card-body"><h3>Printed Women's 3 Piece</h3><div class="old">৳1,200</div><div class="price">৳920</div>
+   <a class="btn" href="https://wa.me/8801836927247?text=I%20want%20to%20order%20Printed%20Women's%203%20Piece">ORDER NOW</a></div>
+  </article>
+
+  <article class="card"><div class="sale">Sale!</div>
+   <img class="product-img" src="baby-romper.jpg" alt="Baby Printed Romper">
+   <div class="card-body"><h3>Baby Printed Romper</h3><div class="old">৳650</div><div class="price">৳499</div>
+   <a class="btn" href="https://wa.me/8801836927247?text=I%20want%20to%20order%20Baby%20Printed%20Romper">ORDER NOW</a></div>
+  </article>
+
+  <article class="card"><div class="sale">Sale!</div>
+   <img class="product-img" src="baby-dress.jpg" alt="Baby Party Dress">
+   <div class="card-body"><h3>Baby Party Dress</h3><div class="old">৳850</div><div class="price">৳699</div>
+   <a class="btn" href="https://wa.me/8801836927247?text=I%20want%20to%20order%20Baby%20Party%20Dress">ORDER NOW</a></div>
+  </article>
+
+  <article class="card"><div class="sale">Sale!</div>
+   <img class="product-img" src="hoodie.jpg" alt="Premium Zip Hoodie">
+   <div class="card-body"><h3>Premium Zip Hoodie</h3><div class="old">৳1,200</div><div class="price">৳899</div>
+   <a class="btn" href="https://wa.me/8801836927247?text=I%20want%20to%20order%20Premium%20Zip%20Hoodie">ORDER NOW</a></div>
+  </article>
+
+  <article class="card"><div class="sale">Sale!</div>
+   <img class="product-img" src="linen-shirt.jpg" alt="Textured Linen Shirt">
+   <div class="card-body"><h3>Textured Linen Shirt</h3><div class="old">৳1,100</div><div class="price">৳720</div>
+   <a class="btn" href="https://wa.me/8801836927247?text=I%20want%20to%20order%20Textured%20Linen%20Shirt">ORDER NOW</a></div>
+  </article>
+
+ </div>
 </section>
 
-<section id="about">
-  <h2 class="title">About Nivora</h2>
-  <p style="text-align:center;max-width:760px;margin:auto;line-height:1.9">Nivora একটি online fashion & lifestyle brand, যেখানে trendy clothing এবং useful everyday products এক জায়গায় পাওয়া যাবে। আমাদের লক্ষ্য—ভালো পণ্য, যুক্তিসঙ্গত দাম এবং সহজ online shopping experience.</p>
-</section>
+<section class="features"><div class="feature-grid">
+ <div class="feature">✓<b>Quality Products</b><span>ভালো মানের পণ্য</span></div>
+ <div class="feature">৳<b>Best Price</b><span>সাশ্রয়ী দাম</span></div>
+ <div class="feature">🚚<b>Home Delivery</b><span>সারাদেশে delivery</span></div>
+ <div class="feature">💬<b>Easy Support</b><span>WhatsApp-এ যোগাযোগ</span></div>
+</div></section>
 
-<section id="contact" class="contact">
-  <h2 class="title">Order & Contact</h2>
-  <p>📍 Muktagacha, Mymensingh, Bangladesh<br>🚚 সারাদেশে Home Delivery<br>💬 WhatsApp / Messenger-এ অর্ডার করুন</p>
-  <a class="btn" href="https://wa.me/8801836927247">WhatsApp-এ Order করুন</a>
-</section>
+<section class="contact"><h2>Order & Contact</h2>
+<p>📍 Muktagacha, Mymensingh<br>🚚 সারাদেশে Home Delivery</p>
+<a class="btn" href="https://wa.me/8801836927247">WhatsApp-এ Order করুন</a></section>
 </main>
 
-<footer>
-  <strong>Nivora</strong><br>Smart Choice, Better Life<br><span class="small">© 2026 Nivora. All rights reserved.</span>
-</footer>
+<a class="float" href="https://wa.me/8801836927247" aria-label="WhatsApp">💬</a>
+<footer><strong>Nivora</strong><br>Smart Choice, Better Life<br><small>© 2026 Nivora. All rights reserved.</small></footer>
 </body>
 </html>
