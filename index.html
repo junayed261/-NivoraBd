@@ -1,918 +1,616 @@
-<!doctype html>
-
-<html lang="bn">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>Nivora — Smart Choice, Better Life</title>
-<meta name="description" content="Nivora — Premium Fashion, Women & Baby Collection"><style>
-*{box-sizing:border-box}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nivora | Smart Choice, Better Life</title>
 
-:root{
---green:#075b3d;
---green2:#0b7650;
---lime:#a6dc5b;
---dark:#14211b;
---cream:#f8faf6;
---text:#202824;
---muted:#727a75;
---border:#e5ebe7;
---white:#fff;
-}
-
-html{scroll-behavior:smooth}
-
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
 body{
-margin:0;
-font-family:Arial,"Noto Sans Bengali",sans-serif;
-background:#fff;
-color:var(--text);
+ font-family:Arial,Helvetica,sans-serif;
+ background:#f7f8f5;
+ color:#17231d;
+ line-height:1.5
 }
-
-a{
-text-decoration:none;
-color:inherit;
-}
-
-img{
-max-width:100%;
-display:block;
-}
+a{text-decoration:none;color:inherit}
+.container{width:92%;max-width:1200px;margin:auto}
 
 /* HEADER */
-
 header{
-position:sticky;
-top:0;
-z-index:1000;
-background:rgba(255,255,255,.96);
-backdrop-filter:blur(12px);
-border-bottom:1px solid var(--border);
+ position:sticky;top:0;z-index:1000;
+ background:rgba(255,255,255,.96);
+ backdrop-filter:blur(10px);
+ border-bottom:1px solid #e8ece8
 }
-
 .nav{
-max-width:1200px;
-height:70px;
-margin:auto;
-padding:0 18px;
-display:flex;
-align-items:center;
-justify-content:space-between;
+ height:72px;display:flex;align-items:center;
+ justify-content:space-between
 }
-
 .logo{
-font-size:30px;
-font-weight:900;
-letter-spacing:-1px;
-color:var(--green);
+ font-size:29px;font-weight:900;letter-spacing:2px;
+ color:#075b3d
 }
-
-.logo span{
-color:var(--lime);
-}
-
-.nav-links{
-display:flex;
-align-items:center;
-gap:25px;
-font-size:14px;
-font-weight:700;
-}
-
-.nav-links a:hover{
-color:var(--green);
-}
-
+.logo span{color:#9acb55}
+nav{display:flex;gap:28px}
+nav a{font-size:14px;font-weight:600;color:#39453f}
+nav a:hover{color:#075b3d}
 .nav-btn{
-background:var(--green);
-color:#fff!important;
-padding:11px 19px;
-border-radius:25px;
-}
-
-.nav-btn:hover{
-background:var(--green2);
+ background:#075b3d;color:white!important;
+ padding:11px 18px;border-radius:30px
 }
 
 /* HERO */
-
 .hero{
-background:
-radial-gradient(circle at 85% 15%,#dff2d2 0,transparent 32%),
-linear-gradient(135deg,#f0f8eb,#fff);
-padding:55px 18px;
+ margin:24px auto;
+ width:92%;max-width:1200px;
+ min-height:500px;
+ border-radius:28px;
+ overflow:hidden;
+ position:relative;
+ background:
+ linear-gradient(90deg,rgba(5,45,30,.92),rgba(5,45,30,.48),rgba(5,45,30,.08)),
+ url("FB_IMG_1790486909006.jpg") center/cover;
+ display:flex;align-items:center
 }
-
-.hero-inner{
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:45px;
-align-items:center;
+.hero-content{padding:55px;max-width:650px;color:white}
+.tag{
+ display:inline-block;background:#b5e36a;color:#17331f;
+ padding:7px 15px;border-radius:30px;
+ font-size:12px;font-weight:bold;
+ margin-bottom:18px
 }
-
-.badge{
-display:inline-flex;
-align-items:center;
-gap:7px;
-background:#e3f2d9;
-color:var(--green);
-padding:9px 15px;
-border-radius:30px;
-font-size:11px;
-font-weight:800;
-letter-spacing:1px;
-}
-
 .hero h1{
-font-size:60px;
-line-height:1.02;
-margin:20px 0 15px;
-letter-spacing:-2px;
+ font-size:58px;line-height:1.05;
+ margin-bottom:18px
 }
-
-.hero h1 span{
-color:var(--green);
+.hero h1 span{color:#b5e36a}
+.hero p{
+ color:#edf4ef;font-size:17px;
+ max-width:520px;margin-bottom:28px
 }
-
-.hero-text{
-font-size:18px;
-line-height:1.8;
-color:var(--muted);
-max-width:540px;
-}
-
-.hero-buttons{
-display:flex;
-gap:12px;
-flex-wrap:wrap;
-margin-top:22px;
-}
-
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
 .btn{
-display:inline-block;
-background:var(--green);
-color:#fff;
-padding:14px 24px;
-border-radius:30px;
-font-weight:800;
-transition:.2s;
+ display:inline-block;padding:14px 24px;
+ border-radius:30px;font-weight:bold;
+ font-size:14px
 }
-
-.btn:hover{
-transform:translateY(-2px);
-background:var(--green2);
-}
-
-.btn-light{
-background:#fff;
-color:var(--green);
-border:1px solid var(--green);
-}
-
-.hero-image{
-position:relative;
-}
-
-.hero-image img{
-width:100%;
-height:450px;
-object-fit:cover;
-border-radius:25px;
-box-shadow:0 20px 50px #0002;
-}
-
-.hero-tag{
-position:absolute;
-bottom:20px;
-left:20px;
-background:#fff;
-padding:13px 18px;
-border-radius:14px;
-font-weight:800;
-box-shadow:0 8px 25px #0002;
-}
+.btn-green{background:#b5e36a;color:#17331f}
+.btn-white{border:1px solid white;color:white}
 
 /* TRUST */
-
 .trust{
-border-bottom:1px solid var(--border);
-background:#fff;
+ background:white;margin:25px auto;
+ padding:22px;border-radius:18px;
+ display:grid;grid-template-columns:repeat(4,1fr);
+ gap:15px;max-width:1200px;width:92%;
+ box-shadow:0 8px 30px rgba(0,0,0,.04)
 }
+.trust-item{text-align:center;border-right:1px solid #e9edea}
+.trust-item:last-child{border:0}
+.trust-icon{font-size:25px;margin-bottom:5px}
+.trust strong{display:block;font-size:14px}
+.trust small{color:#7b847f}
 
-.trust-grid{
-max-width:1200px;
-margin:auto;
-padding:22px 18px;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px;
-text-align:center;
+/* SECTION */
+section{padding:58px 0}
+.section-head{text-align:center;margin-bottom:30px}
+.section-head .mini{
+ color:#729b35;font-size:12px;
+ font-weight:bold;letter-spacing:2px;
+ text-transform:uppercase
 }
-
-.trust-item{
-font-size:13px;
-color:var(--muted);
-}
-
-.trust-item strong{
-display:block;
-color:var(--green);
-font-size:15px;
-margin-bottom:4px;
-}
-
-/* COMMON */
-
-.section{
-max-width:1200px;
-margin:auto;
-padding:65px 18px;
-}
-
-.section-head{
-text-align:center;
-margin-bottom:35px;
-}
-
-.section-head small{
-color:var(--green);
-font-size:11px;
-font-weight:900;
-letter-spacing:1.8px;
-}
-
 .section-head h2{
-font-size:34px;
-margin:9px 0;
+ font-size:34px;margin:6px 0
 }
+.section-head p{color:#7a837e}
 
-.section-head p{
-color:var(--muted);
-margin:0;
+/* CATEGORIES */
+.categories{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:18px
 }
-
-/* CATEGORY */
-
-.category-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-}
-
 .category{
-height:270px;
-border-radius:20px;
-overflow:hidden;
-position:relative;
-background:#eee;
+ height:230px;border-radius:22px;
+ overflow:hidden;position:relative;
+ background-size:cover;background-position:center
 }
-
-.category img{
-width:100%;
-height:100%;
-object-fit:cover;
-transition:.35s;
+.category:after{
+ content:"";position:absolute;inset:0;
+ background:linear-gradient(transparent,rgba(0,0,0,.72))
 }
-
-.category:hover img{
-transform:scale(1.06);
+.category-content{
+ position:absolute;bottom:22px;left:22px;
+ z-index:2;color:white
 }
-
-.category-overlay{
-position:absolute;
-inset:0;
-display:flex;
-align-items:flex-end;
-padding:25px;
-background:linear-gradient(transparent 35%,rgba(0,0,0,.75));
-color:#fff;
-}
-
-.category-overlay h3{
-font-size:27px;
-margin:0 0 5px;
-}
-
-.category-overlay span{
-font-size:13px;
-opacity:.9;
+.category-content h3{font-size:24px}
+.category-content p{font-size:13px;margin:4px 0 10px}
+.category-content a{
+ background:white;color:#17331f;
+ padding:8px 15px;border-radius:20px;
+ font-size:12px;font-weight:bold
 }
 
 /* PRODUCTS */
-
 .products{
-background:var(--cream);
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:22px
 }
-
-.product-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-}
-
 .card{
-background:#fff;
-border:1px solid var(--border);
-border-radius:17px;
-overflow:hidden;
-position:relative;
-transition:.25s;
+ background:white;border-radius:20px;
+ overflow:hidden;
+ border:1px solid #e8ece9;
+ transition:.25s;
+ position:relative
 }
-
 .card:hover{
-transform:translateY(-5px);
-box-shadow:0 15px 35px #0001;
+ transform:translateY(-6px);
+ box-shadow:0 15px 35px rgba(0,0,0,.08)
 }
-
-.sale{
-position:absolute;
-top:13px;
-left:13px;
-z-index:2;
-background:var(--green);
-color:#fff;
-font-size:10px;
-font-weight:900;
-padding:7px 11px;
-border-radius:20px;
+.product-img{height:300px;position:relative;overflow:hidden}
+.product-img img{
+ width:100%;height:100%;object-fit:cover;
+ transition:.4s
 }
-
-.product-img{
-width:100%;
-aspect-ratio:1/1;
-object-fit:cover;
-background:#f4f4f4;
+.card:hover .product-img img{transform:scale(1.05)}
+.badge{
+ position:absolute;top:14px;left:14px;
+ background:#075b3d;color:white;
+ padding:6px 10px;border-radius:20px;
+ font-size:11px;font-weight:bold
 }
-
-.card-body{
-padding:16px;
+.heart{
+ position:absolute;top:14px;right:14px;
+ width:34px;height:34px;
+ border-radius:50%;background:white;
+ display:flex;align-items:center;justify-content:center;
+ box-shadow:0 3px 10px rgba(0,0,0,.12)
 }
-
-.card h3{
-font-size:17px;
-margin:0 0 8px;
-}
-
-.old{
-font-size:13px;
-color:#999;
-text-decoration:line-through;
-}
-
-.price{
-font-size:23px;
-font-weight:900;
-color:var(--green);
-margin-top:3px;
-}
-
+.info{padding:18px}
+.info h3{font-size:17px;margin-bottom:6px}
+.rating{color:#e2a900;font-size:13px;margin-bottom:8px}
+.price{display:flex;align-items:center;gap:9px;margin-bottom:15px}
+.old{text-decoration:line-through;color:#9da49f;font-size:13px}
+.new{font-size:21px;font-weight:800;color:#075b3d}
 .order{
-width:100%;
-text-align:center;
-border-radius:9px;
-margin-top:13px;
-padding:12px;
-font-size:13px;
+ display:block;text-align:center;
+ background:#075b3d;color:white;
+ padding:12px;border-radius:12px;
+ font-weight:bold;font-size:14px
 }
+.order:hover{background:#0b7650}
 
 /* OFFER */
-
 .offer{
-max-width:1200px;
-margin:0 auto;
-padding:55px 18px;
+ background:#075b3d;color:white;
+ border-radius:25px;
+ padding:45px;
+ display:flex;justify-content:space-between;
+ align-items:center;gap:25px
 }
-
-.offer-box{
-background:linear-gradient(110deg,#075b3d,#0d7952);
-color:#fff;
-border-radius:25px;
-padding:45px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:30px;
-overflow:hidden;
-}
-
-.offer-box h2{
-font-size:34px;
-margin:0 0 8px;
-}
-
-.offer-box p{
-margin:0;
-color:#dceee5;
-line-height:1.7;
-}
-
-.offer-box .btn{
-background:#fff;
-color:var(--green);
-white-space:nowrap;
+.offer h2{font-size:35px}
+.offer p{color:#dcece2;margin-top:8px}
+.offer-btn{
+ background:#b5e36a;color:#17331f;
+ padding:14px 23px;border-radius:30px;
+ font-weight:bold;white-space:nowrap
 }
 
 /* WHY */
-
 .why{
-background:#fff;
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:18px
 }
-
-.why-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px;
-}
-
 .why-card{
-background:var(--cream);
-border:1px solid var(--border);
-border-radius:17px;
-padding:25px 15px;
-text-align:center;
+ background:white;padding:27px;
+ border-radius:18px;
+ border:1px solid #e7ebe8
 }
-
-.icon{
-font-size:30px;
-}
-
-.why-card h3{
-color:var(--green);
-font-size:16px;
-margin:10px 0 6px;
-}
-
-.why-card p{
-font-size:13px;
-line-height:1.6;
-color:var(--muted);
-margin:0;
-}
+.why-card .icon{font-size:30px;margin-bottom:10px}
+.why-card h3{margin-bottom:6px}
+.why-card p{font-size:14px;color:#78817c}
 
 /* CONTACT */
-
 .contact{
-background:var(--green);
-color:#fff;
-text-align:center;
-padding:65px 18px;
+ background:#eef5ed;
+ border-radius:25px;
+ padding:40px;
+ text-align:center
 }
-
-.contact h2{
-font-size:35px;
-margin:0 0 12px;
-}
-
-.contact p{
-color:#dceee5;
-line-height:1.9;
-}
-
-.contact .btn{
-background:#fff;
-color:var(--green);
+.contact h2{font-size:30px}
+.contact p{color:#69736d;margin:8px 0 20px}
+.whatsapp{
+ display:inline-block;
+ background:#20b957;color:white;
+ padding:14px 25px;
+ border-radius:30px;font-weight:bold
 }
 
 /* FOOTER */
-
 footer{
-background:var(--dark);
-color:#fff;
-text-align:center;
-padding:32px 15px;
+ background:#10251c;color:white;
+ padding:45px 0 25px;margin-top:40px
+}
+.footer-grid{
+ display:grid;grid-template-columns:2fr 1fr 1fr;
+ gap:35px
+}
+footer h2{font-size:28px;color:#b5e36a}
+footer h3{margin-bottom:12px}
+footer p,footer a{
+ color:#bdc9c1;font-size:14px
+}
+footer a{display:block;margin:7px 0}
+.copy{
+ border-top:1px solid #2d4137;
+ margin-top:30px;padding-top:20px;
+ text-align:center;color:#91a098;font-size:13px
 }
 
-.footer-logo{
-font-size:25px;
-font-weight:900;
-}
-
-.footer-logo span{
-color:var(--lime);
-}
-
-footer p{
-font-size:13px;
-color:#b8c4be;
-line-height:1.7;
-}
-
-/* WHATSAPP */
-
-.whatsapp{
-position:fixed;
-right:18px;
-bottom:18px;
-width:60px;
-height:60px;
-border-radius:50%;
-background:#25d366;
-color:#fff;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:29px;
-z-index:2000;
-box-shadow:0 6px 22px #0003;
+/* FLOATING WHATSAPP */
+.float-wa{
+ position:fixed;right:20px;bottom:20px;
+ width:58px;height:58px;
+ background:#20b957;color:white;
+ border-radius:50%;
+ display:flex;align-items:center;justify-content:center;
+ font-size:28px;z-index:999;
+ box-shadow:0 8px 25px rgba(0,0,0,.25)
 }
 
 /* MOBILE */
-
-@media(max-width:760px){
-
-.nav{
-height:62px;
+@media(max-width:800px){
+ nav{display:none}
+ .nav{height:64px}
+ .logo{font-size:24px}
+ .hero{
+  min-height:550px;
+  margin-top:15px;
+  background-position:center
+ }
+ .hero-content{padding:30px 25px}
+ .hero h1{font-size:40px}
+ .hero p{font-size:15px}
+ .trust{grid-template-columns:repeat(2,1fr)}
+ .trust-item:nth-child(2){border:0}
+ .categories,.products,.why{
+  grid-template-columns:1fr
+ }
+ .category{height:220px}
+ .product-img{height:330px}
+ .offer{
+  padding:30px 24px;
+  flex-direction:column;
+  align-items:flex-start
+ }
+ .offer h2{font-size:28px}
+ .footer-grid{grid-template-columns:1fr}
+ section{padding:42px 0}
+ .section-head h2{font-size:28px}
 }
+</style>
+</head>
 
-.logo{
-font-size:25px;
-}
+<body>
 
-.nav-links{
-gap:8px;
-}
+<header>
+<div class="container nav">
+<a class="logo" href="#">NIV<span>ORA</span></a>
+<nav>
+<a href="#home">Home</a>
+<a href="#categories">Categories</a>
+<a href="#shop">Shop</a>
+<a href="#about">About</a>
+<a class="nav-btn" href="https://wa.me/8801836927247">WhatsApp</a>
+</nav>
+</div>
+</header>
 
-.nav-links a:not(.nav-btn){
-display:none;
-}
+<!-- HERO -->
+<div class="hero" id="home">
+<div class="hero-content">
+<div class="tag">NEW COLLECTION 2026</div>
+<h1>Style That Feels <span>Beautiful.</span></h1>
+<p>
+Discover carefully selected fashion and lifestyle products
+from Nivora — made for everyday style, comfort and confidence.
+</p>
+<div class="hero-buttons">
+<a class="btn btn-green" href="#shop">Shop Collection →</a>
+<a class="btn btn-white" href="https://wa.me/8801836927247">Chat on WhatsApp</a>
+</div>
+</div>
+</div>
 
-.nav-btn{
-padding:9px 14px;
-font-size:12px;
-}
+<!-- TRUST -->
+<div class="trust">
+<div class="trust-item">
+<div class="trust-icon">🚚</div>
+<strong>Nationwide Delivery</strong>
+<small>Across Bangladesh</small>
+</div>
+<div class="trust-item">
+<div class="trust-icon">💳</div>
+<strong>Cash on Delivery</strong>
+<small>Easy & convenient</small>
+</div>
+<div class="trust-item">
+<div class="trust-icon">✨</div>
+<strong>Quality Products</strong>
+<small>Selected with care</small>
+</div>
+<div class="trust-item">
+<div class="trust-icon">💬</div>
+<strong>Easy Ordering</strong>
+<small>WhatsApp support</small>
+</div>
+</div>
 
-.hero{
-padding:35px 13px;
-}
+<!-- CATEGORIES -->
+<section id="categories">
+<div class="container">
+<div class="section-head">
+<div class="mini">Explore Nivora</div>
+<h2>Shop By Category</h2>
+<p>Find something special for everyone.</p>
+</div>
 
-.hero-inner{
-grid-template-columns:1fr;
-gap:28px;
-}
+<div class="categories">
 
-.hero h1{
-font-size:41px;
-letter-spacing:-1px;
-}
+<div class="category"
+style="background-image:url('FB_IMG_1790487135947.jpg')">
+<div class="category-content">
+<h3>Women</h3>
+<p>Elegant fashion for every moment</p>
+<a href="#shop">Explore →</a>
+</div>
+</div>
 
-.hero-text{
-font-size:16px;
-}
+<div class="category"
+style="background-image:url('FB_IMG_1790487293095.jpg')">
+<div class="category-content">
+<h3>Hijab & Modest</h3>
+<p>Simple, beautiful & comfortable</p>
+<a href="#shop">Explore →</a>
+</div>
+</div>
 
-.hero-image img{
-height:330px;
-border-radius:18px;
-}
+<div class="category"
+style="background-image:url('baby-dress.jpg')">
+<div class="category-content">
+<h3>Baby</h3>
+<p>Cute styles for little ones</p>
+<a href="#shop">Explore →</a>
+</div>
+</div>
 
-.trust-grid{
-grid-template-columns:1fr 1fr;
-padding:18px 10px;
-gap:18px 8px;
-}
+</div>
+</div>
+</section>
 
-.trust-item{
-font-size:11px;
-}
+<!-- SHOP -->
+<section id="shop">
+<div class="container">
 
-.trust-item strong{
-font-size:13px;
-}
+<div class="section-head">
+<div class="mini">Our Collection</div>
+<h2>Featured Products</h2>
+<p>Our latest picks, selected specially for you.</p>
+</div>
 
-.section{
-padding:45px 12px;
-}
+<div class="products">
 
-.section-head{
-margin-bottom:25px;
-}
+<!-- PRODUCT 1 -->
+<div class="card">
+<div class="product-img">
+<span class="badge">BEST SELLER</span>
+<span class="heart">♡</span>
+<img src="FB_IMG_1790486909006.jpg">
+</div>
+<div class="info">
+<h3>Premium Fashion Collection</h3>
+<div class="rating">★★★★★ <small>(New)</small></div>
+<div class="price">
+<span class="old">৳1,200</span>
+<span class="new">৳899</span>
+</div>
+<a class="order" href="https://wa.me/8801836927247?text=Hello%20Nivora,%20I%20want%20to%20order%20Premium%20Fashion%20Collection.">Order on WhatsApp</a>
+</div>
+</div>
 
-.section-head h2{
-font-size:27px;
-}
+<!-- PRODUCT 2 -->
+<div class="card">
+<div class="product-img">
+<span class="badge">NEW</span>
+<span class="heart">♡</span>
+<img src="FB_IMG_1790487135947.jpg">
+</div>
+<div class="info">
+<h3>Women's Premium Collection</h3>
+<div class="rating">★★★★★ <small>(New)</small></div>
+<div class="price">
+<span class="old">৳1,200</span>
+<span class="new">৳920</span>
+</div>
+<a class="order" href="https://wa.me/8801836927247?text=Hello%20Nivora,%20I%20want%20to%20order%20Women's%20Premium%20Collection.">Order on WhatsApp</a>
+</div>
+</div>
 
-.category-grid{
-grid-template-columns:1fr;
-gap:12px;
-}
+<!-- PRODUCT 3 -->
+<div class="card">
+<div class="product-img">
+<span class="badge">TRENDING</span>
+<span class="heart">♡</span>
+<img src="FB_IMG_1790487293095.jpg">
+</div>
+<div class="info">
+<h3>Trendy Fashion Wear</h3>
+<div class="rating">★★★★★ <small>(New)</small></div>
+<div class="price">
+<span class="old">৳1,100</span>
+<span class="new">৳799</span>
+</div>
+<a class="order" href="https://wa.me/8801836927247?text=Hello%20Nivora,%20I%20want%20to%20order%20Trendy%20Fashion%20Wear.">Order on WhatsApp</a>
+</div>
+</div>
 
-.category{
-height:200px;
-}
+<!-- PRODUCT 4 -->
+<div class="card">
+<div class="product-img">
+<span class="badge">SALE</span>
+<span class="heart">♡</span>
+<img src="FB_IMG_1790487526424.jpg">
+</div>
+<div class="info">
+<h3>Premium Collection</h3>
+<div class="rating">★★★★★ <small>(New)</small></div>
+<div class="price">
+<span class="old">৳1,000</span>
+<span class="new">৳750</span>
+</div>
+<a class="order" href="https://wa.me/8801836927247?text=Hello%20Nivora,%20I%20want%20to%20order%20Premium%20Collection.">Order on WhatsApp</a>
+</div>
+</div>
 
-.product-grid{
-grid-template-columns:1fr 1fr;
-gap:10px;
-}
+<!-- PRODUCT 5 -->
+<div class="card">
+<div class="product-img">
+<span class="badge">NEW ARRIVAL</span>
+<span class="heart">♡</span>
+<img src="FB_IMG_1790487716681.jpg">
+</div>
+<div class="info">
+<h3>New Fashion Collection</h3>
+<div class="rating">★★★★★ <small>(New)</small></div>
+<div class="price">
+<span class="old">৳950</span>
+<span class="new">৳699</span>
+</div>
+<a class="order" href="https://wa.me/8801836927247?text=Hello%20Nivora,%20I%20want%20to%20order%20New%20Fashion%20Collection.">Order on WhatsApp</a>
+</div>
+</div>
 
-.products{
-padding-bottom:45px;
-}
+<!-- PRODUCT 6 -->
+<div class="card">
+<div class="product-img">
+<span class="badge">BABY PICK</span>
+<span class="heart">♡</span>
+<img src="baby-dress.jpg">
+</div>
+<div class="info">
+<h3>Baby Dress Collection</h3>
+<div class="rating">★★★★★ <small>(New)</small></div>
+<div class="price">
+<span class="old">৳850</span>
+<span class="new">৳699</span>
+</div>
+<a class="order" href="https://wa.me/8801836927247?text=Hello%20Nivora,%20I%20want%20to%20order%20Baby%20Dress%20Collection.">Order on WhatsApp</a>
+</div>
+</div>
 
-.card{
-border-radius:11px;
-}
+</div>
+</div>
+</section>
 
-.card-body{
-padding:10px;
-}
-
-.card h3{
-font-size:13px;
-line-height:1.4;
-}
-
-.old{
-font-size:10px;
-}
-
-.price{
-font-size:19px;
-}
-
-.sale{
-top:8px;
-left:8px;
-font-size:8px;
-padding:5px 8px;
-}
-
-.order{
-font-size:10px;
-padding:10px 3px;
-}
-
-.offer{
-padding:40px 12px;
-}
-
-.offer-box{
-padding:28px 20px;
-display:block;
-border-radius:18px;
-}
-
-.offer-box h2{
-font-size:27px;
-}
-
-.offer-box .btn{
-margin-top:18px;
-}
-
-.why-grid{
-grid-template-columns:1fr 1fr;
-gap:10px;
-}
-
-.why-card{
-padding:18px 8px;
-}
-
-.why-card h3{
-font-size:13px;
-}
-
-.why-card p{
-font-size:10px;
-}
-
-.contact{
-padding:48px 15px;
-}
-
-.contact h2{
-font-size:28px;
-}
-
-.whatsapp{
-width:56px;
-height:56px;
-font-size:26px;
-}
-
-}
-</style></head><body><header><div class="nav"><a class="logo" href="#">
-Ni<span>v</span>ora
-</a><nav class="nav-links"><a href="#categories">Categories</a>
-<a href="#products">Products</a>
-<a href="#contact">Contact</a>
-
-<a class="nav-btn" href="https://wa.me/8801836927247">
-Order Now
-</a></nav></div></header><main><!-- HERO --><section class="hero"><div class="hero-inner"><div><div class="badge">
-✦ NIVORA • PREMIUM COLLECTION
-</div><h1>
-Smart Choice,<br>
-<span>Better Life.</span>
-</h1><p class="hero-text">
-Trendy fashion, women's collection ও baby essentials —
-ভালো মানের পণ্য, সুন্দর ডিজাইন এবং সাশ্রয়ী দামে।
-</p><div class="hero-buttons"><a class="btn" href="#products">
-Shop Collection →
-</a><a class="btn btn-light" href="https://wa.me/8801836927247">
-WhatsApp Order
-</a></div></div><div class="hero-image"><img
-src="FB_IMG_1790486909006.jpg"
-alt="Nivora Premium Collection"
-
-«»
-
-<div class="hero-tag">
-✦ Nivora Premium
-</div></div></div></section><!-- TRUST --><section class="trust"><div class="trust-grid"><div class="trust-item">
-<strong>✓ Quality First</strong>
-ভালো মানের পণ্য
-</div><div class="trust-item">
-<strong>৳ Best Price</strong>
-সাশ্রয়ী দাম
-</div><div class="trust-item">
-<strong>🚚 Home Delivery</strong>
-সারাদেশে delivery
-</div><div class="trust-item">
-<strong>💬 Easy Support</strong>
-WhatsApp support
-</div></div></section><!-- CATEGORIES --><section class="section" id="categories"><div class="section-head"><small>SHOP BY CATEGORY</small>
-
-<h2>Explore Collections</h2><p>
-আপনার পছন্দের collection বেছে নিন
-</p></div><div class="category-grid"><a class="category" href="#products"><img
-src="FB_IMG_1790486909006.jpg"
-alt="Men Collection"
-
-«»
-
-<div class="category-overlay"><div>
-<h3>MEN</h3>
-<span>Explore Men's Fashion →</span>
-</div></div></a><a class="category" href="#products"><img
-src="FB_IMG_1790487135947.jpg"
-alt="Women Collection"
-
-«»
-
-<div class="category-overlay"><div>
-<h3>WOMEN</h3>
-<span>Explore Women's Fashion →</span>
-</div></div></a><a class="category" href="#products"><img
-src="baby-dress.jpg"
-alt="Baby Collection"
-
-«»
-
-<div class="category-overlay"><div>
-<h3>BABY</h3>
-<span>Explore Baby Collection →</span>
-</div></div></a></div></section><!-- PRODUCTS --><section class="products" id="products"><div class="section"><div class="section-head"><small>FEATURED PRODUCTS</small>
-
-<h2>Our Premium Collection</h2><p>
-পছন্দের product বেছে নিয়ে সরাসরি WhatsApp-এ order করুন।
-</p></div><div class="product-grid"><!-- 1 --><article class="card"><div class="sale">SALE</div><img
-class="product-img"
-src="FB_IMG_1790486909006.jpg"
-alt="Premium Fashion Collection"
-
-«»
-
-<div class="card-body"><h3>Premium Fashion Collection</h3><div class="old">৳1,200</div><div class="price">৳899</div><a
-class="btn order"
-href="https://wa.me/8801836927247?text=I%20want%20to%20order%20Premium%20Fashion%20Collection"
-
-«»
-
-ORDER NOW
+<!-- OFFER -->
+<section>
+<div class="container">
+<div class="offer">
+<div>
+<h2>Special Collection</h2>
+<p>Fresh styles • Premium look • Attractive prices</p>
+</div>
+<a class="offer-btn" href="https://wa.me/8801836927247?text=Hello%20Nivora,%20please%20show%20me%20your%20latest%20collection.">
+View Collection →
 </a>
+</div>
+</div>
+</section>
 
-</div></article><!-- 2 --><article class="card"><div class="sale">SALE</div><img
-class="product-img"
-src="FB_IMG_1790487135947.jpg"
-alt="Women's Premium Collection"
+<!-- WHY NIVORA -->
+<section id="about">
+<div class="container">
+<div class="section-head">
+<div class="mini">Why Nivora</div>
+<h2>Shopping Made Simple</h2>
+<p>Everything you need for a smooth shopping experience.</p>
+</div>
 
-«»
+<div class="why">
 
-<div class="card-body"><h3>Women's Premium Collection</h3><div class="old">৳1,200</div><div class="price">৳920</div><a
-class="btn order"
-href="https://wa.me/8801836927247?text=I%20want%20to%20order%20Women's%20Premium%20Collection"
+<div class="why-card">
+<div class="icon">💚</div>
+<h3>Selected With Care</h3>
+<p>We focus on stylish and useful products that offer great value.</p>
+</div>
 
-«»
+<div class="why-card">
+<div class="icon">📦</div>
+<h3>Easy Delivery</h3>
+<p>Get your order delivered conveniently anywhere in Bangladesh.</p>
+</div>
 
-ORDER NOW
+<div class="why-card">
+<div class="icon">🤝</div>
+<h3>Customer Support</h3>
+<p>Message us directly on WhatsApp whenever you need help.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section>
+<div class="container">
+<div class="contact">
+<h2>Ready to Order?</h2>
+<p>Send us a message and we'll help you choose your perfect product.</p>
+<a class="whatsapp" href="https://wa.me/8801836927247">
+💬 Chat with Nivora on WhatsApp
 </a>
+</div>
+</div>
+</section>
 
-</div></article><!-- 3 --><article class="card"><div class="sale">SALE</div><img
-class="product-img"
-src="FB_IMG_1790487293095.jpg"
-alt="Trendy Fashion Wear"
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<div class="footer-grid">
 
-«»
+<div>
+<h2>NIVORA</h2>
+<p style="margin-top:10px">
+Smart Choice, Better Life.
+<br>
+Online Fashion & Lifestyle Store.
+</p>
+</div>
 
-<div class="card-body"><h3>Trendy Fashion Wear</h3><div class="old">৳1,100</div><div class="price">৳799</div><a
-class="btn order"
-href="https://wa.me/8801836927247?text=I%20want%20to%20order%20Trendy%20Fashion%20Wear"
+<div>
+<h3>Quick Links</h3>
+<a href="#home">Home</a>
+<a href="#categories">Categories</a>
+<a href="#shop">Shop</a>
+<a href="#about">About Nivora</a>
+</div>
 
-«»
+<div>
+<h3>Contact</h3>
+<p>Muktagacha, Mymensingh</p>
+<p style="margin-top:7px">Nationwide Delivery</p>
+<a href="https://wa.me/8801836927247">WhatsApp Us</a>
+</div>
 
-ORDER NOW
-</a>
+</div>
 
-</div></article><!-- 4 --><article class="card"><div class="sale">SALE</div><img
-class="product-img"
-src="FB_IMG_1790487526424.jpg"
-alt="Premium Collection"
-
-«»
-
-<div class="card-body"><h3>Premium Collection</h3><div class="old">৳1,000</div><div class="price">৳750</div><a
-class="btn order"
-href="https://wa.me/8801836927247?text=I%20want%20to%20order%20Premium%20Collection"
-
-«»
-
-ORDER NOW
-</a>
-
-</div></article><!-- 5 --><article class="card"><div class="sale">SALE</div><img
-class="product-img"
-src="FB_IMG_1790487716681.jpg"
-alt="New Fashion Collection"
-
-«»
-
-<div class="card-body"><h3>New Fashion Collection</h3><div class="old">৳950</div><div class="price">৳699</div><a
-class="btn order"
-href="https://wa.me/8801836927247?text=I%20want%20to%20order%20New%20Fashion%20Collection"
-
-«»
-
-ORDER NOW
-</a>
-
-</div></article><!-- 6 --><article class="card"><div class="sale">SALE</div><img
-class="product-img"
-src="baby-dress.jpg"
-alt="Baby Dress Collection"
-
-«»
-
-<div class="card-body"><h3>Baby Dress Collection</h3><div class="old">৳850</div><div class="price">৳699</div><a
-class="btn order"
-href="https://wa.me/8801836927247?text=I%20want%20to%20order%20Baby%20Dress"
-
-«»
-
-ORDER NOW
-</a>
-
-</div></article></div></div></section><!-- OFFER --><section class="offer"><div class="offer-box"><div><h2>✨ Special Collection</h2><p>
-Nivora-তে নতুন fashion collection আসছে।
-আপনার পছন্দের product দেখতে আজই message করুন।
-</p></div><a
-class="btn"
-href="https://wa.me/8801836927247?text=Hello%20Nivora%2C%20I%20want%20to%20see%20your%20latest%20collection"
-
-«»
-
-See Latest Collection →
-</a>
-
-</div></section><!-- WHY --><section class="why"><div class="section"><div class="section-head"><small>WHY NIVORA</small>
-
-<h2>Shopping Made Simple</h2></div><div class="why-grid"><div class="why-card"><div class="icon">✓</div><h3>Quality Products</h3><p>
-ভালো মানের product বাছাই করে দেওয়া হয়।
-</p></div><div class="why-card"><div class="icon">৳</div><h3>Affordable Price</h3><p>
-সাশ্রয়ী দামে সুন্দর ও trendy collection।
-</p></div><div class="why-card"><div class="icon">🚚</div><h3>Home Delivery</h3><p>
-সারাদেশে সহজ delivery সুবিধা।
-</p></div><div class="why-card"><div class="icon">💬</div><h3>Easy Support</h3><p>
-WhatsApp-এ দ্রুত যোগাযোগ করতে পারবেন।
-</p></div></div></div></section><!-- CONTACT --><section class="contact" id="contact"><h2>Ready to Order?</h2><p>
-আপনার পছন্দের product-এর জন্য এখনই WhatsApp-এ message করুন।<br>
-📍 Muktagacha, Mymensingh &nbsp; • &nbsp; 🚚 সারাদেশে Delivery
-</p><a
-class="btn"
-href="https://wa.me/8801836927247"
-
-«»
-
-💬 WhatsApp-এ Order করুন
-</a>
-
-</section></main><!-- WHATSAPP --><a
-class="whatsapp"
-href="https://wa.me/8801836927247"
-aria-label="WhatsApp"
-
-«»
-
-💬
-</a>
-
-<!-- FOOTER --><footer><div class="footer-logo">
-Ni<span>v</span>ora
-</div><p>
-Smart Choice, Better Life<br>
-Online Fashion & Lifestyle Store
-</p><small>
+<div class="copy">
 © 2026 Nivora. All rights reserved.
-</small></footer></body>
-</html>
+</div>
+</div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/8801836927247">💬</a>
+
+</body>
+  </html>
