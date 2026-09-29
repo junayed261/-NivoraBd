@@ -7,7 +7,11 @@
 <title>Nivora — Smart Choice, Better Life</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
 
 body{
 font-family:Arial,Helvetica,sans-serif;
@@ -15,7 +19,9 @@ background:#f7f8f5;
 color:#17231d;
 }
 
-a{text-decoration:none}
+a{
+text-decoration:none;
+}
 
 .container{
 width:92%;
@@ -52,7 +58,9 @@ letter-spacing:2px;
 color:#075b3d;
 }
 
-.logo span{color:#9bc94e}
+.logo span{
+color:#9bc94e;
+}
 
 .tagline{
 border-left:1px solid #dfe5e1;
@@ -95,7 +103,9 @@ justify-content:space-between;
 gap:30px;
 }
 
-.hero-text{max-width:600px}
+.hero-text{
+max-width:600px;
+}
 
 .hero-label{
 color:#6e9936;
@@ -111,7 +121,9 @@ line-height:1.12;
 color:#173328;
 }
 
-.hero h1 span{color:#075b3d}
+.hero h1 span{
+color:#075b3d;
+}
 
 .hero p{
 color:#68736d;
@@ -222,6 +234,19 @@ object-fit:contain;
 display:block;
 }
 
+.badge{
+position:absolute;
+top:11px;
+left:11px;
+background:#075b3d;
+color:white;
+padding:5px 9px;
+border-radius:15px;
+font-size:9px;
+font-weight:bold;
+z-index:2;
+}
+
 .info{
 padding:14px;
 }
@@ -229,6 +254,7 @@ padding:14px;
 .info h3{
 font-size:15px;
 margin-bottom:6px;
+text-transform:capitalize;
 }
 
 .stars{
@@ -272,12 +298,12 @@ font-size:12px;
 font-weight:bold;
 }
 
-/* LOADING */
 .loading{
 text-align:center;
 padding:35px 10px;
 color:#68746d;
 font-size:13px;
+grid-column:1/-1;
 }
 
 /* WHY NIVORA */
@@ -502,7 +528,9 @@ height:175px;
 <a href="#home">Home</a>
 <a href="#shop">Shop</a>
 <a href="#about">About</a>
-<a class="nav-wa" href="https://wa.me/8801690110255">
+
+<a class="nav-wa"
+href="https://wa.me/8801690110255">
 WhatsApp
 </a>
 </nav>
@@ -566,6 +594,7 @@ Loading Nivora products...
 </div>
 
 </div>
+
 </section>
 
 
@@ -661,30 +690,41 @@ Chat on WhatsApp
 
 
 <!-- FLOATING WHATSAPP -->
-<a class="float-wa" href="https://wa.me/8801690110255">💬</a>
+<a class="float-wa"
+href="https://wa.me/8801690110255">
+💬
+</a>
 
 
 <script>
 
 /*
 ====================================================
-NIVORA AUTOMATIC PRODUCT LOADER
+NIVORA AUTOMATIC PRODUCT SYSTEM
 ====================================================
 
-After this code is installed:
+শুধু ছবি upload করবেন।
+index.html আর edit করতে হবে না।
 
-1. Go to your GitHub "nivo" repository
-2. Upload product pictures
-3. Do NOT change index.html again
-4. Do NOT delete old pictures
+Filename format:
 
-Supported:
-JPG / JPEG / PNG / WEBP / GIF
+MEN SHIRT:
+mens-full-sleeve-1300-S-M-L-XL-XXL.jpg
 
-The website automatically finds all image files
-inside the repository and displays them here.
+MEN PANT:
+mens-pant-1200-30-32-34-36-38-40.jpg
+
+WOMEN:
+women-3-piece-1300-36-38-40-42-44-46.jpg
+
+BABY:
+baby-dress-850-6-12-month.jpg
+
+Product name + Price + Size
+filename থেকে automatically নেওয়া হবে.
 ====================================================
 */
+
 
 const GITHUB_USER = "junayed261";
 const GITHUB_REPO = "nivo";
@@ -692,30 +732,163 @@ const GITHUB_BRANCH = "main";
 
 const WHATSAPP = "8801690110255";
 
+
+/* ---------- FORMAT PRODUCT NAME ---------- */
+
+function formatProductName(text){
+
+return text
+.replace(/[-_]+/g," ")
+.replace(/\b\w/g,char => char.toUpperCase())
+.trim();
+
+}
+
+
+/* ---------- READ PRODUCT INFORMATION ---------- */
+
+function readProduct(filename){
+
+let cleanName = filename
+.replace(/\.(jpg|jpeg|png|webp|gif)$/i,"")
+.trim();
+
+
+/*
+Find the first normal product price.
+
+Example:
+mens-pant-1200-30-32-34
+*/
+
+const priceMatch = cleanName.match(/(?:^|-)(\d{3,5})(?=-|$)/);
+
+let price = "";
+
+if(priceMatch){
+price = priceMatch[1];
+}
+
+
+/*
+Everything before the price = product name
+*/
+
+let productName = cleanName;
+
+if(priceMatch){
+
+productName =
+cleanName
+.substring(0,priceMatch.index)
+.replace(/[-_]+$/,"")
+.trim();
+
+}
+
+
+/*
+Everything after price = size information
+*/
+
+let size = "";
+
+if(priceMatch){
+
+const afterPrice =
+cleanName.substring(
+priceMatch.index + priceMatch[0].length
+);
+
+size =
+afterPrice
+.replace(/^-+/,"")
+.replace(/-/g," / ")
+.trim();
+
+}
+
+
+/*
+If no price was found,
+use complete filename as product name.
+*/
+
+if(!productName){
+productName = "Nivora Product";
+}
+
+
+/*
+If no size was written.
+*/
+
+if(!size){
+size = "Size available — Contact on WhatsApp";
+}
+
+
+return {
+name:formatProductName(productName),
+price:price,
+size:size
+};
+
+}
+
+
+/* ---------- LOAD ALL IMAGES ---------- */
+
 async function loadProducts(){
 
-const productList = document.getElementById("productList");
+const productList =
+document.getElementById("productList");
+
 
 try{
 
 const api =
 `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/?ref=${GITHUB_BRANCH}`;
 
-const response = await fetch(api);
+
+const response =
+await fetch(api);
+
 
 if(!response.ok){
-throw new Error("GitHub files could not be loaded");
+
+throw new Error(
+"Could not load GitHub files"
+);
+
 }
 
-const files = await response.json();
 
-const imageFiles = files
+const files =
+await response.json();
+
+
+/*
+Only image files.
+index.html or other files are ignored.
+*/
+
+const imageFiles =
+files
 .filter(file => file.type === "file")
-.filter(file => /\.(jpg|jpeg|png|webp|gif)$/i.test(file.name))
-.sort((a,b) => a.name.localeCompare(b.name, undefined, {
+.filter(file =>
+/\.(jpg|jpeg|png|webp|gif)$/i.test(file.name)
+)
+.sort((a,b) =>
+a.name.localeCompare(
+b.name,
+undefined,
+{
 numeric:true,
 sensitivity:"base"
-}));
+}
+)
+);
 
 
 if(imageFiles.length === 0){
@@ -727,39 +900,64 @@ No product pictures found yet.
 `;
 
 return;
+
 }
 
 
 productList.innerHTML = "";
 
 
+/* ---------- CREATE EACH PRODUCT ---------- */
+
 imageFiles.forEach((file,index)=>{
 
 const productNumber = index + 1;
+
+const product =
+readProduct(file.name);
+
+
+/*
+GitHub image URL
+*/
 
 const imageURL =
 `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${encodeURIComponent(file.name)}`;
 
 
-const productName = "Nivora Fashion Product";
+/*
+WhatsApp message
+*/
+
+const whatsappText =
+`Hello Nivora, I want to order ${product.name}. Price: ৳${product.price || "Contact for Price"}. Size: ${product.size}. Product picture: ${file.name}`;
 
 
-const card = document.createElement("div");
+const card =
+document.createElement("div");
 
 card.className = "card";
+
 
 card.innerHTML = `
 
 <div class="product-img">
 
-${productNumber <= 3
-? `<span class="badge">${productNumber === 3 ? "POPULAR" : "NEW"}</span>`
-: ""
+${
+productNumber <= 3
+?
+`<span class="badge">
+${productNumber === 1 ? "NEW" :
+  productNumber === 2 ? "NEW" :
+  "POPULAR"}
+</span>`
+:
+""
 }
 
 <img
 src="${imageURL}"
-alt="${productName} ${productNumber}"
+alt="${product.name}"
 loading="lazy"
 >
 
@@ -768,56 +966,89 @@ loading="lazy"
 
 <div class="info">
 
-<h3>${productName}</h3>
+<h3>
+${product.name}
+</h3>
 
-<div class="stars">★★★★★</div>
+<div class="stars">
+★★★★★
+</div>
+
 
 <div class="price">
-<span class="new">Contact for Price</span>
+
+<span class="new">
+
+${
+product.price
+?
+"৳" + product.price
+:
+"Contact for Price"
+}
+
+</span>
+
 </div>
+
 
 <div class="size">
-Available sizes and details can be confirmed on WhatsApp.
+
+Size: ${product.size}
+
 </div>
 
+
 <div class="offer">
-🎁 Home Delivery Available
+🚚 Home Delivery Available
 </div>
+
 
 <a
 class="order"
-href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-"I want to order Product " + productNumber + " from Nivora. Picture: " + file.name
-)}"
+href="https://wa.me/${WHATSAPP}?text=${encodeURIComponent(whatsappText)}"
+target="_blank"
 >
 Order on WhatsApp
 </a>
 
 </div>
+
 `;
+
 
 productList.appendChild(card);
 
 });
 
-}catch(error){
+
+}
+catch(error){
 
 console.error(error);
 
+
 productList.innerHTML = `
+
 <div class="loading">
+
 Unable to load products right now.<br>
 Please refresh the website.
+
 </div>
+
 `;
 
 }
 
 }
+
+
+/* START */
 
 loadProducts();
 
 </script>
 
 </body>
-  </html>
+</html>
